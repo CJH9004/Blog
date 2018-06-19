@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>test</title>
+  <base href="http://localhost:3000/">
+  <style>
+    
+  </style>
+</head>
+<body>
+  <header>
+    <h2>test API</h2>
+    <nav>
+      <h3>articles</h3>
+      <ul>
+        <li>
+          <strong><big>get</big></strong>
+          <a href="">/articles/:id</a>
+          <small>获取单个文章</small>
+          <div class="test-area"></div>
+        </li>
+        <li>
+          <strong><big>post</big></strong>
+          <a href="">/articles</a>
+          <small>创建文章</small>
+          <div class="test-area"></div>
+        </li>
+        <li>
+          <strong><big>delete</big></strong>
+          <a href="">/articles/:id</a>
+          <small>删除文章</small>
+          <div class="test-area"></div>
+        </li>
+        <li>
+          <strong><big>patch</big></strong>
+          <a href="">/articles/:id</a>
+          <small>修改文章</small>
+          <div class="test-area"></div>
+        </li>
+        <li>
+          <strong><big>get</big></strong>
+          <a href="">/allArticles</a>
+          <small>获取所有文章</small>
+          <div class="test-area"></div>
+        </li>
+        <li>
+          <strong><big>get</big></strong>
+          <a href="">/articles</a>
+          <small>获取所以已发布的文章（前台使用）</small>
+          <div class="test-area"></div>
+        </li>
+        <li>
+          <strong><big>patch</big></strong>
+          <a href="">/pubArticles/:id</a>
+          <small>发布或不发布文章</small>
+          <div class="test-area"></div>
+        </li>
+      </ul>
+      <h3>tags</h3>
+      <ul>
+        <li>
+          <strong><big>post</big></strong>
+          <a href="">/tags</a>
+          <small>创建标签</small>
+          <div class="test-area"></div>
+        </li>
+        <li>
+          <strong><big>get</big></strong>
+          <a href="">/tags</a>
+          <small>获取所有标签</small>
+          <div class="test-area"></div>
+        </li>
+        <li>
+          <strong><big>patch</big></strong>
+          <a href="">/tags/:id</a>
+          <small>修改单个标签</small>
+          <div class="test-area"></div>
+        </li>
+        <li>
+          <strong><big>delete</big></strong>
+          <a href="">/tags/:id</a>
+          <small>删除单个标签</small>
+          <div class="test-area"></div>
+        </li>
+      </ul>
+      <h3>users</h3>
+      <ul>
+        <li>
+          <strong><big>post</big></strong>
+          <a href="">/login</a>
+          <small>用户登录</small>
+          <div class="test-area">
+            <form action="api/login" method="post">
+              <input type="text" name="username"><br>
+              <input type="password" name="password"><br>
+              <input type="submit" value="sumbit">
+            </form>
+          </div>
+        </li>
+      </ul>
+      <h3>me</h3>
+      <ul>
+        <li>
+          <strong><big>get</big></strong>
+          <a href="">/me</a>
+          <small>获取个人信息</small>
+          <div class="test-area"></div>
+        </li>
+        <li>
+          <strong><big>patch</big></strong>
+          <a href="">/me</a>
+          <small>更改个人信息</small>
+          <div class="test-area"></div>
+        </li>
+      </ul>
+    </nav>
+  </header>
+</body>
+</html>
