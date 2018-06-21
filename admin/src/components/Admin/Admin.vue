@@ -1,7 +1,7 @@
 <template>
     <div class="page">
         <header>
-            <a href="http://twinkle77.cn"><img src="../../assets/logo.png" alt="logo.png" width="160px" class="logo"></a>
+            <a href="http://suixin.tech"><img src="../../assets/logo.png" alt="logo.png" width="420px" class="logo"></a>
             <div class="logout">
                 <i class="iconfont icon-directions_run icon-icondirectionsrun logout-icon" @click.stop="logout"></i>
             </div>

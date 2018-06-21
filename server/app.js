@@ -8,6 +8,11 @@ const app = new Koa();
 //配置文件
 const config = require('./configs');
 
+//适配vue history的中间件
+const historyApiFallback = require('koa2-connect-history-api-fallback');
+// handle fallback for HTML5 history API
+app.use(historyApiFallback({ whiteList: ['/api', '/admin'] }));
+
 //response中间件
 const response = require('./middlewares/response.js');
 

@@ -4,8 +4,8 @@ var path = require('path')
 module.exports = {
   build: {
     env: require('./prod.env'),
-    index: path.resolve(__dirname, '../dist/admin/index.html'),
-    assetsRoot: path.resolve(__dirname, '../dist/admin'),
+    index: path.resolve(__dirname, '../../server/dist/admin/index.html'),
+    assetsRoot: path.resolve(__dirname, '../../server/dist/admin'),
     assetsSubDirectory: 'static',
     assetsPublicPath: '/admin/',  // 发布时项目根目录，HTTP请求：/admin/..
     productionSourceMap: true,
@@ -28,10 +28,10 @@ module.exports = {
     assetsSubDirectory: 'static',
     assetsPublicPath: '/',
     proxyTable: {
-      // '/api': {
-			// 	target: 'http://localhost:3000',
-			// 	changeOrigin: true
-			// }
+      '/api': {
+				target: 'http://localhost:3000',
+				changeOrigin: true
+			}
     },
     // CSS Sourcemaps off by default because relative paths are "buggy"
     // with this option, according to the CSS-Loader README

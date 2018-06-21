@@ -109,7 +109,7 @@ a{
   flex-wrap: wrap;
 }
 .article {
-  flex: 1 0 360px;
+  flex: 1 0 260px;
 }
 .continue {
   float: right;
