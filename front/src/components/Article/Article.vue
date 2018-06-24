@@ -178,7 +178,6 @@ footer {
   cursor: pointer;
 }
 .catalog-wrapper {
-  display: inline-block;
   width: 100px;
   position: absolute;
   right: 0;
@@ -190,9 +189,6 @@ footer {
   padding: 0;
   overflow-y: scroll;
   height: 150px;
-  display: flex;
-  flex-flow: column;
-  justify-content: space-around;
 }
 
 /* 设置滚动条的样式 */
@@ -208,7 +204,7 @@ footer {
 .catalog-list::-webkit-scrollbar-thumb {
 border-radius:10px;
 background:rgba(0,0,0,0.1);
-box-shadow:inset006pxrgba(0,0,0,0.5);
+box-shadow:inset 0 0 6px rgba(0,0,0,0.5);
 }
 .catalog-list::-webkit-scrollbar-thumb:window-inactive {
 background:rgba(255,0,0,0.4);
