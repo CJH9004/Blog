@@ -17,6 +17,7 @@
             </div>        
             <textarea id="editor"></textarea>
             <div class="btn">
+                <div class="save" @click.stop="saveArticle">保存草稿</div>
                 <div class="delete" @click.stop="emptyDraft">新建草稿</div>
                 <div class="save" @click.stop="publishArticle">发布文章</div>
             </div>
