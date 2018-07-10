@@ -17,7 +17,7 @@
         </footer>
       </article>
       <aside class="catalog" v-if="hasCatalog" v-show="!loading">
-        <h3 @click="scrollToTop" title="返回顶部">文章目录<i class="iconfont icon-top"></i></h3>
+        <h3>文章目录<i @click="scrollToTop" title="返回顶部" class="iconfont icon-top"></i></h3>
         <div class="catalog-wrapper">
           <ul class="catalog-list">
             <li v-for="(item, index) in catalog" :key="index" class="catalog-li">

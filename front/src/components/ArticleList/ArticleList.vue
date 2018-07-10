@@ -32,7 +32,7 @@ export default {
     return {
       articles: [],
       page: 1,  //默认加载第一页
-      limit: 5, //一次加载五条数据
+      limit: 6, //一次加载五条数据
       pages: -1, //总页数
       load: false,  //显示加载中
       end: false   //判断请求是否完成，只有当前请求发送完，才能发送下一个请求
@@ -53,10 +53,13 @@ export default {
   },
   mounted(){
     document.addEventListener('scroll', () => {
-      let scrollTop = document.body.scrollTop;      //获取当前滚动条的高度
-      let offsetHeight = document.body.offsetHeight;    //获取可视区的高度
-      let scrollHeight = Math.max(document.documentElement.scrollHeight, document.body.scrollHeight); //获取总内容高度
-      if(offsetHeight + scrollTop + 5 >= scrollHeight){  
+      // let scrollTop = document.body.scrollTop;      //获取当前滚动条的高度
+      // let offsetHeight = document.body.offsetHeight;    //获取可视区的高度
+      // let scrollHeight = Math.max(document.documentElement.scrollHeight, document.body.scrollHeight); //获取总内容高度
+      let scrollHeight = window.scrollY + window.innerHeight
+      let totalHeight = document.body.scrollHeight //获取总内容高度
+      console.log(scrollHeight,totalHeight)
+      if(scrollHeight >= totalHeight){
         if(this.end === false){      //先当前是否在处理发送的请求，只有this.end===fasle的时候才能发送请求
           this.end = true;                 
           if(this.page >= this.pages){     //判断当前页数是否>总页数
