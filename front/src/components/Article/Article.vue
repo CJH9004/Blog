@@ -149,7 +149,18 @@ footer {
   color: #666;
 }
 .markdown {
-  padding: 32px;
+  padding: 16px;
+  overflow: hidden;
+}
+@media (min-width: 480px) {
+  .markdown {
+    padding: 32px;
+  }
+}
+@media (min-width: 900px) {
+  .markdown {
+    padding: 64px;
+  }
 }
 .catalog {
   border-radius: 15px;
@@ -210,6 +221,11 @@ box-shadow:inset 0 0 6px rgba(0,0,0,0.5);
 background:rgba(255,0,0,0.4);
 }
 
+/* add to avoid reflow */
+.catalog-list>li {
+  height: 22px;
+  margin: 2px 0;
+}
 .catalog-list a {
   color: rgb(168, 234, 236);
   font-size: 14px;

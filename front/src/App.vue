@@ -62,6 +62,11 @@ a {
     text-decoration: none;
 }
 .createTime {
-  color: darkseagreen;
+    color: darkseagreen;
+}
+
+/* make the code container scroll */
+pre {
+    overflow: scroll;
 }
 </style>

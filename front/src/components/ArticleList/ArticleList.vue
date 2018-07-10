@@ -111,6 +111,11 @@ a{
 .article {
   flex: 1 0 260px;
 }
+/* add footer style to avoid the reflow raised by router-link tag border transition */
+footer {
+  box-sizing: border-box;
+  height: 26px;
+}
 .continue {
   float: right;
 }

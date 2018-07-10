@@ -1,5 +1,5 @@
 <template>
-  <header>
+  <header @mouseover="showBanner">
     <nav :class="['nav', {'nav-with-banner': isShowBanner}]">
       <router-link to="/articles">
         <div class="nav-logo">
@@ -67,9 +67,16 @@ export default {
         },1500)
       }
     },
-    // 滚到顶部时显示nav背景图
+    // 滚到顶部且mouseover时显示nav背景图
+    handleScroll(){
+      if(window.pageYOffset !== 0 && this.isShowBanner === true){
+        this.isShowBanner = false
+      }
+    },
     showBanner(){
-      this.isShowBanner = window.pageYOffset === 0
+      if(window.pageYOffset === 0 && this.isShowBanner === false){
+        this.isShowBanner = true
+      }
     },
     // 手机端nav list动画
     switchNavListForPhone(){
@@ -81,7 +88,7 @@ export default {
     }
   },
   created(){
-    window.addEventListener('scroll', this.showBanner)
+    window.addEventListener('scroll', this.handleScroll)
     this.isPC = window.innerWidth >= 768
   },
   mounted: function(){
@@ -144,10 +151,15 @@ export default {
   .nav-list-phone {
     list-style-type: none;
     margin: 0;
-    padding: 0 25px;
+    padding: 6px 25px;
     width: 150px;
     background-color: rgba(43, 43, 43, 0.6);
     border-radius: 15px;
+  }
+  /* add to avoid reflow */
+  .nav-list-phone>li {
+    height: 22px;
+    margin: 2px 0;
   }
 
   .nav-list>li {
@@ -167,7 +179,7 @@ export default {
     transform: translateY(-29px);
   }
   .nav-with-banner{
-    height: 180px;
+    height: 160px;
   }
   @media (min-width: 480px) {
     .nav-with-banner{
