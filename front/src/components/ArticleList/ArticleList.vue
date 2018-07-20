@@ -1,5 +1,6 @@
 <template>
   <div class="articles-list">
+    <v-loading type="ring" v-show="loading"></v-loading>
     <article v-for="(item, index) in articles" :key="index" class="article border-1px">
       <header>
         <h1 class="title"><router-link :to="'/articles/' + item._id" class="hover-underline">{{ item.title }}</router-link></h1>
@@ -35,21 +36,24 @@ export default {
       limit: 6, //一次加载五条数据
       pages: -1, //总页数
       load: false,  //显示加载中
-      end: false   //判断请求是否完成，只有当前请求发送完，才能发送下一个请求
+      end: false,   //判断请求是否完成，只有当前请求发送完，才能发送下一个请求
+      loading: false
     }
   },
   created(){
-     api.getArticlesByPage(this.page, this.limit)
-        .then(res => {
-          if(res.data.code === 200){
-            this.pages = Math.ceil(res.data.total/this.limit);
-            this.articles = res.data.data.slice(0);
-          }
-        })
-        .catch(err => {
-          console.log('获取文章失败！');
-          alert('网络出现问题！');
-        });
+    this.loading = true;
+    api.getArticlesByPage(this.page, this.limit)
+      .then(res => {
+        if(res.data.code === 200){
+          this.pages = Math.ceil(res.data.total/this.limit);
+          this.articles = res.data.data.slice(0);
+        }
+        this.loading = false;
+      })
+      .catch(err => {
+        console.log('获取文章失败！');
+        alert('网络出现问题！');
+      });
   },
   mounted(){
     document.addEventListener('scroll', () => {
